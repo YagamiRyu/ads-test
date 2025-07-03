@@ -1,0 +1,405 @@
+/* Tema personalizado mejorado para Giscus */
+
+/* Variables principales con mayor especificidad */
+:root {
+  --color-prettylights-syntax-comment: #6e7681;
+  --color-prettylights-syntax-constant: #0550ae;
+  --color-prettylights-syntax-entity: #8250df;
+  --color-prettylights-syntax-storage-modifier-import: #24292f;
+  --color-prettylights-syntax-entity-tag: #116329;
+  --color-prettylights-syntax-keyword: #cf222e;
+  --color-prettylights-syntax-string: #0a3069;
+  --color-prettylights-syntax-variable: #953800;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
+  --color-prettylights-syntax-invalid-illegal: #f6f8fa;
+  --color-prettylights-syntax-invalid-illegal-bg: #82071e;
+  --color-prettylights-syntax-carriage-return-txt: #f6f8fa;
+  --color-prettylights-syntax-carriage-return-bg: #cf222e;
+  --color-prettylights-syntax-string-regexp: #116329;
+  --color-prettylights-syntax-markup-list: #3b2300;
+  --color-prettylights-syntax-markup-heading: #0550ae;
+  --color-prettylights-syntax-markup-italic: #24292f;
+  --color-prettylights-syntax-markup-bold: #24292f;
+  --color-prettylights-syntax-markup-deleted-text: #82071e;
+  --color-prettylights-syntax-markup-deleted-bg: #FFEBE9;
+  --color-prettylights-syntax-markup-inserted-text: #116329;
+  --color-prettylights-syntax-markup-inserted-bg: #dafbe1;
+  --color-prettylights-syntax-markup-changed-text: #953800;
+  --color-prettylights-syntax-markup-changed-bg: #ffd8b5;
+  --color-prettylights-syntax-markup-ignored-text: #eaeef2;
+  --color-prettylights-syntax-markup-ignored-bg: #0550ae;
+  --color-prettylights-syntax-meta-diff-range: #8250df;
+  --color-prettylights-syntax-brackethighlighter-angle: #57606a;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
+  --color-prettylights-syntax-constant-other-reference-link: #0a3069;
+  --color-fg-default: #24292f;
+  --color-fg-muted: #656d76;
+  --color-fg-subtle: #6e7681;
+  --color-canvas-default: #ffffff;
+  --color-canvas-subtle: #f6f8fa;
+  --color-border-default: #d0d7de;
+  --color-border-muted: #d8dee4;
+  --color-neutral-muted: rgba(175,184,193,0.2);
+  --color-accent-fg: #0969da;
+  --color-accent-emphasis: #0969da;
+  --color-attention-subtle: #fff8c5;
+  --color-danger-fg: #cf222e;
+  
+  /* Variables personalizadas */
+  --giscus-primary-color: #0969da;
+  --giscus-primary-color-light: #0969da20;
+  --giscus-primary-color-dark: #0550ae;
+}
+
+/* Contenedor principal del iframe y elementos externos */
+#giscus-container {
+  border-radius: 12px !important;
+  border: 1px solid var(--color-border-default) !important;
+  background: var(--color-canvas-default) !important;
+  padding: 20px !important;
+  margin: 20px 0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Estilos para el iframe de Giscus */
+.giscus-frame {
+  border-radius: 12px !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* Selectores específicos para elementos dentro del iframe */
+.giscus,
+.giscus-widget,
+iframe[title="Comments"] {
+  background: var(--color-canvas-default) !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--color-border-default) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Estilos inyectados que funcionan dentro del iframe */
+.giscus :is(
+  .Timeline,
+  .Timeline-Item,
+  .js-comment-container,
+  .js-discussion-timeline,
+  .discussion-timeline,
+  .js-comment-edit-form,
+  .comment-form-head,
+  .comment-form-textarea,
+  .comment-reactions,
+  .comment-body,
+  .comment-header,
+  .comment-meta,
+  .comment-author,
+  .comment-content,
+  .markdown-body,
+  .form-control,
+  .btn,
+  .btn-primary,
+  .btn-outline,
+  .text-normal,
+  .text-bold,
+  .text-gray,
+  .border,
+  .border-gray,
+  .bg-gray,
+  .bg-white,
+  .p-3,
+  .p-2,
+  .m-2,
+  .m-3,
+  .mb-3,
+  .mt-3,
+  .ml-3,
+  .mr-3,
+  .d-flex,
+  .flex-column,
+  .flex-row,
+  .flex-wrap,
+  .justify-content-between,
+  .align-items-center
+) {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important;
+}
+
+/* Encabezado mejorado */
+.giscus .comment-form-head,
+.giscus .discussion-timeline-actions,
+.giscus .timeline-comment-header {
+  border-bottom: 1px solid var(--color-border-muted) !important;
+  padding-bottom: 16px !important;
+  margin-bottom: 16px !important;
+  background: var(--color-canvas-subtle) !important;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+/* Área de texto mejorada */
+.giscus .comment-form-textarea,
+.giscus .form-control,
+.giscus textarea {
+  border-radius: 8px !important;
+  border: 2px solid var(--color-border-default) !important;
+  background: var(--color-canvas-subtle) !important;
+  padding: 12px !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  transition: border-color 0.2s ease !important;
+  min-height: 100px !important;
+  resize: vertical !important;
+}
+
+.giscus .comment-form-textarea:focus,
+.giscus .form-control:focus,
+.giscus textarea:focus {
+  border-color: var(--giscus-primary-color) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px var(--giscus-primary-color-light) !important;
+}
+
+/* Botones mejorados */
+.giscus .btn,
+.giscus .btn-primary,
+.giscus button {
+  background: var(--giscus-primary-color) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 8px 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.giscus .btn:hover,
+.giscus .btn-primary:hover,
+.giscus button:hover {
+  background: var(--giscus-primary-color-dark) !important;
+  transform: translateY(-1px) !important;
+}
+
+.giscus .btn-outline,
+.giscus .btn-secondary {
+  background: transparent !important;
+  color: var(--giscus-primary-color) !important;
+  border: 1px solid var(--giscus-primary-color) !important;
+}
+
+.giscus .btn-outline:hover,
+.giscus .btn-secondary:hover {
+  background: var(--giscus-primary-color-light) !important;
+  color: var(--giscus-primary-color-dark) !important;
+}
+
+/* Comentarios mejorados */
+.giscus .timeline-comment,
+.giscus .js-comment-container,
+.giscus .comment {
+  border-left: 3px solid var(--giscus-primary-color) !important;
+  margin: 16px 0 !important;
+  background: var(--color-canvas-subtle) !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.giscus .timeline-comment:hover,
+.giscus .js-comment-container:hover,
+.giscus .comment:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Autor del comentario */
+.giscus .comment-author,
+.giscus .author,
+.giscus .timeline-comment-header .author {
+  font-weight: 600 !important;
+  color: var(--giscus-primary-color) !important;
+  text-decoration: none !important;
+}
+
+.giscus .comment-author:hover,
+.giscus .author:hover,
+.giscus .timeline-comment-header .author:hover {
+  text-decoration: underline !important;
+  color: var(--giscus-primary-color-dark) !important;
+}
+
+/* Reacciones mejoradas */
+.giscus .comment-reactions,
+.giscus .reaction-summary-item {
+  display: flex !important;
+  gap: 8px !important;
+  margin-top: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+.giscus .reaction-summary-item,
+.giscus .btn-link {
+  border: 1px solid var(--color-border-default) !important;
+  border-radius: 20px !important;
+  padding: 4px 8px !important;
+  background: var(--color-canvas-default) !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  font-size: 12px !important;
+}
+
+.giscus .reaction-summary-item:hover,
+.giscus .btn-link:hover {
+  background: var(--color-canvas-subtle) !important;
+  border-color: var(--giscus-primary-color) !important;
+  transform: scale(1.05) !important;
+}
+
+.giscus .reaction-summary-item.user-has-reacted {
+  background: var(--giscus-primary-color-light) !important;
+  border-color: var(--giscus-primary-color) !important;
+  color: var(--giscus-primary-color-dark) !important;
+}
+
+/* Contenido del comentario */
+.giscus .comment-body,
+.giscus .markdown-body {
+  line-height: 1.6 !important;
+  color: var(--color-fg-default) !important;
+}
+
+.giscus .comment-body p,
+.giscus .markdown-body p {
+  margin-bottom: 16px !important;
+}
+
+.giscus .comment-body code,
+.giscus .markdown-body code {
+  background: var(--color-canvas-subtle) !important;
+  padding: 2px 4px !important;
+  border-radius: 4px !important;
+  font-size: 0.9em !important;
+}
+
+.giscus .comment-body pre,
+.giscus .markdown-body pre {
+  background: var(--color-canvas-subtle) !important;
+  padding: 16px !important;
+  border-radius: 8px !important;
+  overflow-x: auto !important;
+}
+
+/* Modo oscuro mejorado */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-fg-default: #f0f6fc;
+    --color-fg-muted: #7d8590;
+    --color-fg-subtle: #6e7681;
+    --color-canvas-default: #0d1117;
+    --color-canvas-subtle: #161b22;
+    --color-border-default: #30363d;
+    --color-border-muted: #21262d;
+    --color-neutral-muted: rgba(110,118,129,0.4);
+    --color-accent-fg: #58a6ff;
+    --color-accent-emphasis: #1f6feb;
+    --color-attention-subtle: #fff8c5;
+    --color-danger-fg: #f85149;
+    
+    --giscus-primary-color: #58a6ff;
+    --giscus-primary-color-light: #58a6ff20;
+    --giscus-primary-color-dark: #1f6feb;
+  }
+  
+  .giscus .timeline-comment,
+  .giscus .js-comment-container,
+  .giscus .comment {
+    border-left-color: var(--giscus-primary-color) !important;
+  }
+}
+
+/* Responsive mejorado */
+@media (max-width: 768px) {
+  #giscus-container {
+    margin: 10px 0 !important;
+    padding: 16px !important;
+    border-radius: 8px !important;
+  }
+  
+  .giscus .comment-form-textarea,
+  .giscus .form-control,
+  .giscus textarea {
+    min-height: 80px !important;
+  }
+  
+  .giscus .comment-reactions,
+  .giscus .reaction-summary-item {
+    flex-wrap: wrap !important;
+  }
+  
+  .giscus .timeline-comment,
+  .giscus .js-comment-container,
+  .giscus .comment {
+    padding: 12px !important;
+  }
+  
+  .giscus .btn,
+  .giscus .btn-primary,
+  .giscus button {
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Animaciones adicionales */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.giscus .timeline-comment,
+.giscus .js-comment-container,
+.giscus .comment {
+  animation: fadeInUp 0.5s ease-out !important;
+}
+
+/* Mejoras de accesibilidad */
+.giscus .btn:focus,
+.giscus .btn-primary:focus,
+.giscus button:focus,
+.giscus .form-control:focus,
+.giscus textarea:focus {
+  outline: 2px solid var(--giscus-primary-color) !important;
+  outline-offset: 2px !important;
+}
+
+/* Scrollbar personalizada */
+.giscus .comment-form-textarea::-webkit-scrollbar,
+.giscus .form-control::-webkit-scrollbar,
+.giscus textarea::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.giscus .comment-form-textarea::-webkit-scrollbar-track,
+.giscus .form-control::-webkit-scrollbar-track,
+.giscus textarea::-webkit-scrollbar-track {
+  background: var(--color-canvas-subtle) !important;
+  border-radius: 4px !important;
+}
+
+.giscus .comment-form-textarea::-webkit-scrollbar-thumb,
+.giscus .form-control::-webkit-scrollbar-thumb,
+.giscus textarea::-webkit-scrollbar-thumb {
+  background: var(--giscus-primary-color) !important;
+  border-radius: 4px !important;
+}
+
+.giscus .comment-form-textarea::-webkit-scrollbar-thumb:hover,
+.giscus .form-control::-webkit-scrollbar-thumb:hover,
+.giscus textarea::-webkit-scrollbar-thumb:hover {
+  background: var(--giscus-primary-color-dark) !important;
+}
